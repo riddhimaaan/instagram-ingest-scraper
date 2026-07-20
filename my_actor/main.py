@@ -86,7 +86,9 @@ async def main() -> None:
 
             frames_out = []
             for fpath in frame_paths:
-                key = f'frames/{fpath.name}'
+                # KVS record keys may not contain '/' (allowed: a-zA-Z0-9!-_.'()),
+                # so namespace frames with a dash prefix, not a slash path.
+                key = f'frames-{fpath.name}'
                 await kv_store.set_value(key, fpath.read_bytes(), content_type='image/jpeg')
                 frames_out.append({'kvsKey': key})
 
