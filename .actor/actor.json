@@ -1,0 +1,14 @@
+{
+	"$schema": "https://apify.com/schemas/v1/actor.ide.json",
+	"actorSpecification": 1,
+	"name": "instagram-ingest-scraper",
+	"title": "Instagram Ingest Scraper",
+	"description": "Downloads an Instagram reel/post/carousel, transcribes any video with faster-whisper, and returns structured metadata + media so an AI agent (via the Apify MCP) can extract text and file it into Notion.",
+	"version": "0.1",
+	"buildTag": "latest",
+	"meta": {
+		"templateId": "python-empty"
+	},
+	"dockerfile": "../Dockerfile",
+	"input": "./input_schema.json"
+}

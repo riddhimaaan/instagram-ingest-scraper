@@ -1,0 +1,30 @@
+{
+  "title": "Instagram Ingest Scraper",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "instagramUrl": {
+      "title": "Instagram URL",
+      "type": "string",
+      "description": "A reel, post, or carousel URL (/reel/, /reels/, /p/, or /tv/).",
+      "editor": "textfield",
+      "prefill": "https://www.instagram.com/reel/XXXXXXXXX/"
+    },
+    "cookies": {
+      "title": "Instagram cookies (optional override)",
+      "type": "string",
+      "description": "Netscape-format cookies.txt content for a logged-in Instagram account. Leave blank to use the IG_COOKIES Actor environment variable set once in Actor settings — that's the recommended path so you never paste cookies per run.",
+      "editor": "textarea",
+      "isSecret": true
+    },
+    "whisperModel": {
+      "title": "Whisper model",
+      "type": "string",
+      "description": "faster-whisper model size for reel transcription.",
+      "editor": "select",
+      "enum": ["tiny", "base", "small", "medium"],
+      "default": "base"
+    }
+  },
+  "required": ["instagramUrl"]
+}
